@@ -1,23 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
+import { SketchPicker } from 'react-color';
+
+
+import React from "react";
+import { Chart } from "react-google-charts";
 
 function App() {
+  const data = [
+    ["Задача", "Часы в день"],
+    ["Работа", 8],
+    ["Еда", 2],
+    ["Путь на работу", 2],
+    ["Просмотр ТВ", 2],
+    ["Сон", 8],
+  ];
+
+  const options = {
+    title: "Мои ежедневные занятия",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+      <Chart
+        chartType="PieChart"
+        data={data}
+        options={options}
+        width={"100%"}
+        height={"400px"}
+      />
     </div>
   );
 }

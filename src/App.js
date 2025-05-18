@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { SketchPicker } from 'react-color';
+// import { SketchPicker } from 'react-color';
 
 
 import React from "react";
@@ -32,5 +32,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
